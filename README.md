@@ -86,7 +86,7 @@ Important controls include:
 - AI-assisted development is not presented as wholly unaided authorship;
 - unsupported claims are revised, qualified or removed.
 
-See [evidence and claim controls](docs/evidence-and-claim-controls.md) and the [example evidence matrix](examples/evidence-matrix.example.md).
+See [evidence and claim controls](docs/evidence-and-claim-controls.md), the [example evidence matrix](examples/evidence-matrix.example.md), and the structured [claim-ledger example](examples/claim-ledger.example.json).
 
 ## Human-in-the-loop design
 
@@ -131,7 +131,8 @@ docs/
 └── lessons-and-limitations.md
 examples/
 ├── job-fit-criteria.example.md
-└── evidence-matrix.example.md
+├── evidence-matrix.example.md
+└── claim-ledger.example.json
 ```
 
 ## Publication boundary
