@@ -1,6 +1,6 @@
 # Evidence-Driven AI Job Search & Application Workflow
 
-A human-in-the-loop workflow for reducing job-search noise, identifying genuinely relevant roles, and developing applications from verifiable evidence rather than unsupported claims.
+A documented human-in-the-loop workflow for reducing job-search noise, identifying genuinely relevant roles, and developing applications from verifiable evidence rather than unsupported claims.
 
 > **Core principle:** optimise for genuine fit and defensible evidence, not for making the candidate appear suitable at any cost.
 
@@ -11,12 +11,14 @@ I built this process around two recurring problems:
 1. **Job discovery is noisy.** Interesting roles do not always have predictable titles, while manually checking every job alert is repetitive.
 2. **Application evidence is fragmented.** Relevant evidence can be spread across career history, qualifications, GitHub projects, employer research and the vacancy itself.
 
-The workflow therefore has two deliberately different levels of automation:
+The workflow therefore uses two deliberately different levels of automation:
 
-- **Discovery:** a scheduled AI task reviews new Indeed job-alert emails, assesses vacancies against career-fit criteria defined before any individual application, avoids repeats and surfaces credible matches for human review.
+- **Discovery:** a scheduled ChatGPT task reviews new Indeed job-alert emails, compares the available vacancy information with career-fit criteria defined before any individual application, avoids intentionally repeating previously surfaced roles, and surfaces credible matches for human review.
 - **Application:** once I decide a role is worth pursuing, AI assists with requirement extraction, research synthesis, evidence mapping, drafting and critique, while higher-stakes decisions about claims, positioning and submission remain human-controlled.
 
 The objective is not to automate applying for jobs. It is to automate low-value checking while making the higher-value reasoning **more evidence-driven and auditable**.
+
+**What this case study demonstrates:** workflow scoping, criteria design, graduated automation, human review, source hierarchy, claim provenance, explicit gap handling, AI-assisted iteration and honest implementation boundaries.
 
 ## Workflow
 
@@ -24,7 +26,7 @@ The objective is not to automate applying for jobs. It is to automate low-value 
 flowchart TD
     A[Indeed job-alert emails] --> B[Scheduled AI fit review]
     B --> C{Credible match?}
-    C -- No --> D[Suppress / no notification]
+    C -- No --> D[Suppress / no result]
     C -- Yes --> E[Human review]
     E --> F[Extract role requirements]
     F --> G[Research employer and role context]
@@ -38,7 +40,7 @@ flowchart TD
     N --> O[Human approval]
 ```
 
-More detail: [architecture](docs/architecture.md) · [job-fit screening](docs/job-fit-screening.md)
+More detail: [architecture](docs/architecture.md) · [job-fit screening](docs/job-fit-screening.md) · [evidence controls](docs/evidence-and-claim-controls.md)
 
 ## Worked example: Morgan & Morgan Business and Technology
 
@@ -55,15 +57,15 @@ It was an unusually strong match to signals that had already been defined in the
 | Learning unfamiliar technology | Learn the company's stack and client environments |
 | Communication and documentation | Scope, document, hand over and explain completed work |
 
-That triggered the second stage of the workflow: requirement extraction, employer research, GitHub review, evidence mapping, project selection, CV restructuring, cover-letter iteration and final factual QA.
+That triggered the second stage: requirement extraction, employer research, GitHub review, evidence mapping, project selection, CV restructuring, cover-letter iteration and final factual QA.
 
-The resulting evidence matrix deliberately included both strengths and gaps. For example, I could evidence n8n/OpenAI workflow work, scripting, testing, APIs/webhooks, documentation and user support; I could **not** evidence meaningful hands-on experience with Power Automate, Entra, Intune or Copilot Studio, so those remained development areas rather than being inflated into experience.
+The evidence matrix deliberately included both strengths and gaps. I could evidence n8n/OpenAI workflow work, scripting, testing, APIs/webhooks, documentation and user support; I could **not** evidence meaningful hands-on experience with Power Automate, Entra, Intune or Copilot Studio, so those remained development areas rather than being inflated into experience.
 
 Read the full [Morgan & Morgan worked example](docs/worked-example-morgan-and-morgan.md).
 
 ## Evidence and claim controls
 
-The application stage uses a simple source hierarchy:
+The application stage uses a source hierarchy:
 
 | Source | Authority |
 |---|---|
@@ -103,7 +105,7 @@ This matters because polished output can still be wrong: it can foreground weak 
 
 ## What is actually automated?
 
-The discovery stage is implemented as a **scheduled AI task** reviewing new Indeed alert emails in my connected mailbox against a defined set of ranking signals. It deduplicates previously surfaced roles and only notifies me when a credible match appears.
+The discovery stage is implemented as a **scheduled ChatGPT task connected to my mailbox**. I designed and refined the instructions, fit criteria, filtering rules and output behaviour; I did not build the scheduling or mailbox connector infrastructure.
 
 The deeper application stage is intentionally more manual. The closer the workflow gets to high-stakes claims about experience, authorship or suitability, the more human judgement is retained.
 
@@ -114,6 +116,8 @@ This project does **not** auto-submit applications, mass-apply to vacancies, inv
 This repository demonstrates my approach to an ambiguous information-and-decision workflow. It is not intended to substitute for my technical portfolio.
 
 My most directly relevant automation project is [AI-Assisted Submission-Scope Guidance](https://github.com/jdohertydev/ai-assisted-submission-scope-guidance), an n8n/OpenAI workflow built around deterministic validation, constrained model judgement, structured-output checking, human review, failure handling, testing and documentation.
+
+Supporting examples used in the Morgan & Morgan evidence mapping include [Outlook Class Calendar Automation](https://github.com/jdohertydev/outlook-class-calendar-automation) and [PowerShell Photo Archive Automation](https://github.com/jdohertydev/powershell-photo-archive-automation).
 
 ## Repository map
 
@@ -129,6 +133,10 @@ examples/
 ├── job-fit-criteria.example.md
 └── evidence-matrix.example.md
 ```
+
+## Publication boundary
+
+The public repository is intentionally curated. Raw private chats, private email content, account identifiers, credentials, personal financial information and unnecessary personal source documents are not published. The aim is to document the workflow and its controls without exposing the private workspace behind it.
 
 ## Disclosure
 
