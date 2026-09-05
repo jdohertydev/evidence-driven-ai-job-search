@@ -75,6 +75,8 @@ A simplified record might look like:
 
 The current application process uses this idea conceptually rather than through a full software implementation. The structured example shows the direction I would take if the workflow were formalised further.
 
+See the public [`claim-ledger.example.json`](../examples/claim-ledger.example.json) for supported, qualified, gap and inference examples.
+
 ## Public-data boundary
 
 The public repository is deliberately sanitised. It does not publish raw private conversations, private email content, personal salary/living-cost information, credentials, account identifiers or source documents containing unnecessary personal data.
