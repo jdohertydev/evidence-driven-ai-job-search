@@ -1,6 +1,8 @@
 # Example job-fit criteria
 
-This is a simplified public example of the criteria used to rank job-alert vacancies.
+This is a simplified public version of the criteria used to rank vacancies from job-alert emails.
+
+It intentionally excludes private personal constraints and keeps only the professional signals needed to explain the decision logic.
 
 ## Positive signals
 
@@ -17,7 +19,8 @@ Give more weight to roles involving one or more of the following:
 - implementation;
 - building or improving systems;
 - practical use of technology to remove friction;
-- meaningful autonomy and ownership.
+- meaningful autonomy and ownership;
+- learning unfamiliar tools to solve concrete problems.
 
 ## Negative signals
 
@@ -32,8 +35,20 @@ Down-rank roles dominated by:
 
 ## Decision rule
 
-These signals are not hard filters.
+These signals are **ranking factors, not hard filters**.
 
-A role can still be surfaced when the overall pattern is interesting, even if it does not match an obvious job title or every preferred criterion.
+A role can still be surfaced when the overall pattern is interesting even if it does not match an obvious title or every preferred criterion.
 
-The purpose is discovery, not automated rejection.
+```text
+new vacancy
+    ↓
+compare with positive + negative signals
+    ↓
+clearly weak fit? ── yes ──> suppress
+    │
+    no
+    ↓
+credible / unusual possibility? ── yes ──> surface for human review
+```
+
+The purpose is discovery, not automated rejection or automated application.
