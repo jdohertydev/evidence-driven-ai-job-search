@@ -49,7 +49,7 @@ Before drafting, I created a simple evidence matrix.
 | AI-assisted workflows | n8n workflow combining deterministic checks, constrained OpenAI output and human review | Strong | Lead evidence |
 | Testing and reliability | Failure-path testing in n8n; dry runs and verification in [PowerShell Photo Archive Automation](https://github.com/jdohertydev/powershell-photo-archive-automation) | Strong | Emphasise |
 | Scripting | PowerShell, Python and VBA examples | Strong practical evidence | Emphasise without claiming expert-level depth |
-| APIs / webhooks | Portfolio API and webhook examples | Supporting evidence | Use precisely; avoid implying broad commercial experience |
+| APIs / webhooks | [AfterRun](https://github.com/jdohertydev/afterrun-public) public OAuth/webhook architecture examples and privately validated workflow context | Supporting evidence | Use precisely; do not turn portfolio/private implementation evidence into broad commercial experience |
 | Documentation / handover | Repository documentation plus historical staff training and user support | Strong | Emphasise |
 | Non-technical communication | Technical support, training, implementation and management experience | Strong | Use as a differentiator |
 | Power Automate | No meaningful direct hands-on evidence identified | Gap | Do not claim experience |
@@ -76,17 +76,29 @@ This became the strongest project for the role because it demonstrates several o
 - test cases;
 - technical documentation.
 
+The public repository clearly states that it is a fictional/sanitised training project rather than a live editorial deployment.
+
 ### Supporting example — Outlook Class Calendar Automation
 
 [View repository](https://github.com/jdohertydev/outlook-class-calendar-automation)
 
 This is simpler technically but strong behavioural evidence. It began with a repetitive real-world process, was first automated with Zapier, and was later rebuilt in Outlook VBA when the cost constraint changed. It demonstrates that automation was a recurring way I approached friction before I saw this vacancy.
 
+The public repository also documents a known issue in the historical VBA version instead of presenting the system as flawless.
+
 ### Supporting example — PowerShell Photo Archive Automation
 
 [View repository](https://github.com/jdohertydev/powershell-photo-archive-automation)
 
-This supports the scripting and reliability side of the application: staged execution, dry runs, duplicate handling and verification rather than making destructive changes first and hoping they worked.
+This supports the scripting and reliability side of the application: staged execution, dry runs, duplicate handling, copy-before-cleanup and SHA-256 verification rather than making destructive changes first and hoping they worked.
+
+The public scripts are transparently labelled as later reconstructions of the original one-off workflow, with the provenance boundary documented.
+
+### Additional API / webhook evidence — AfterRun
+
+[View repository](https://github.com/jdohertydev/afterrun-public)
+
+AfterRun broadens the evidence beyond workflow tools. Its public portfolio version includes recruiter-safe Strava OAuth and webhook code samples, API integration architecture, automated tests, privacy-by-design decisions and conservative human-review states. The repository distinguishes the synthetic public demo from the deeper private implementation and real-world validation.
 
 ## 4. Positioning decision
 
@@ -95,6 +107,8 @@ My historic job titles do not immediately read as **AI / Automation Engineer**. 
 The better approach was to change the information hierarchy.
 
 Instead of asking employment chronology to prove I was already an automation engineer, the application led with recent technical and automation evidence. Earlier employment then supported the transferable parts of the role: troubleshooting, implementation, process improvement, user support, documentation and training.
+
+The technical-education claim was also kept precise: **Diploma in Full Stack Software Development (E-commerce Applications) — Merit**, rather than allowing older CV wording to become the authority.
 
 The working narrative was:
 
@@ -165,6 +179,12 @@ Before submission, each important application statement should survive five ques
 5. **Could I defend it if challenged?**
 
 If not, revise or remove it.
+
+## Public-source boundary
+
+The public case study does not publish the raw application workspace. Private chats, private email content, personal financial material and unnecessary source documents remain private.
+
+The public GitHub repositories linked above are used where they provide recruiter-verifiable project evidence. Employment and qualification claims are based on source records retained outside this repository.
 
 ## Why this example belongs in the portfolio
 
