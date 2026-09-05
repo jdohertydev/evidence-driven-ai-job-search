@@ -1,0 +1,57 @@
+{
+  "case_study": "AI / Automation Engineer application",
+  "purpose": "Illustrative public example of claim provenance; not the private application record",
+  "claims": [
+    {
+      "claim_id": "CLM-001",
+      "claim": "Designed, configured, tested and documented an n8n workflow using controlled OpenAI output and human review",
+      "evidence": [
+        {
+          "evidence_id": "EVID-GH-001",
+          "source_type": "public_github_project",
+          "source": "https://github.com/jdohertydev/ai-assisted-submission-scope-guidance"
+        }
+      ],
+      "status": "supported",
+      "treatment": "lead_evidence"
+    },
+    {
+      "claim_id": "CLM-002",
+      "claim": "Uses PowerShell, Python and VBA for practical scripting tasks",
+      "evidence": [
+        {
+          "evidence_id": "EVID-GH-002",
+          "source_type": "public_github_project",
+          "source": "https://github.com/jdohertydev/powershell-photo-archive-automation"
+        },
+        {
+          "evidence_id": "EVID-CAREER-001",
+          "source_type": "private_career_record",
+          "source": "retained outside public repository"
+        }
+      ],
+      "status": "supported_with_qualification",
+      "treatment": "describe practical use; do not claim expert depth"
+    },
+    {
+      "claim_id": "CLM-003",
+      "claim": "Experienced Power Automate developer",
+      "evidence": [],
+      "status": "gap",
+      "treatment": "do_not_claim"
+    },
+    {
+      "claim_id": "CLM-004",
+      "claim": "The employer appears to be expanding practical AI and automation delivery",
+      "evidence": [
+        {
+          "evidence_id": "EVID-EMPLOYER-001",
+          "source_type": "public_employer_research",
+          "source": "public vacancy and company material"
+        }
+      ],
+      "status": "inference",
+      "treatment": "use for internal context; do not present as insider fact"
+    }
+  ]
+}
